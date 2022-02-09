@@ -14,3 +14,21 @@ struct ToDo {
   var startDate: Date
   var dueDate: Date
 }
+
+extension ToDo {
+  static func fixture(
+    id: Int16 = 0,
+    title: String = "",
+    content: String = "",
+    startDate: Date = Date(),
+    dueDate: Date = Date()
+  ) -> ToDo {
+    return .init(
+      id: id,
+      title: title,
+      content: content,
+      startDate: startDate,
+      dueDate: dueDate
+    )
+  }
+}
