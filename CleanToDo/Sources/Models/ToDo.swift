@@ -17,7 +17,7 @@ struct ToDo {
 
 extension ToDo {
   static func fixture(
-    id: Int16 = 0,
+    id: Int16,
     title: String = "",
     content: String = "",
     startDate: Date = Date(),
