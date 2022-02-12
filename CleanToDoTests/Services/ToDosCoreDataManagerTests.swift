@@ -21,8 +21,10 @@ class ToDosCoreDataManagerTests: XCTestCase {
   }
   
   override func tearDown() {
-    super.tearDown()
+    sut.deleteAllToDos { _ in }
     sut = nil
+    
+    super.tearDown()
   }
   
   func testCreateToDo() {
@@ -111,6 +113,7 @@ class ToDosCoreDataManagerTests: XCTestCase {
   
   func testUpdateToDo() {
     // Given
+    let didContextSaveExpectation = expectation(forNotification: .NSManagedObjectContextDidSave, object: sut.context) { _ in return true }
     let didUpdateExpectation = expectation(description: "Waiting for the updateToDo() call to update existing ToDo.")
     let fixture = ToDo.fixture(id: 3, title: "Update")
     
@@ -124,7 +127,7 @@ class ToDosCoreDataManagerTests: XCTestCase {
       didUpdateExpectation.fulfill()
     }
     
-    wait(for: [didUpdateExpectation], timeout: 1.0)
+    wait(for: [didUpdateExpectation, didContextSaveExpectation], timeout: 1.0)
     
     // Then
     XCTAssertNil(updatedError)
@@ -158,17 +161,18 @@ class ToDosCoreDataManagerTests: XCTestCase {
   
   func testDeleteToDo() {
     // Given
+    let didContextSaveExpectation = expectation(forNotification: .NSManagedObjectContextDidSave, object: sut.context) { _ in return true }
     let didDeleteExpectation = expectation(description: "Waiting for the deleteToDo() call to delete exisiting ToDo.")
     
     var deletedError: ToDosCoreDataManagerError!
     
     // When
-    sut.deleteToDo(id: 4) { error in
+    sut.deleteToDo(id: 3) { error in
       deletedError = error
       didDeleteExpectation.fulfill()
     }
     
-    wait(for: [didDeleteExpectation], timeout: 1.0)
+    wait(for: [didDeleteExpectation, didContextSaveExpectation], timeout: 1.0)
     
     // Then
     XCTAssertNil(deletedError)
