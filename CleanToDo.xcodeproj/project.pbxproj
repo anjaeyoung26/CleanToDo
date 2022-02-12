@@ -10,6 +10,7 @@
 		2E414226D9C1C7905D58094D /* Pods_CleanToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0A8B67F4A6D6D051293574 /* Pods_CleanToDoUITests.framework */; };
 		40D1EE8F9F052CB11A33DEDE /* Pods_CleanToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66FE43F9F70A3F40E8E4545 /* Pods_CleanToDoTests.framework */; };
 		8F197FD37C0F3303573E033D /* Pods_CleanToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7AE874B772AEC7CA90507F /* Pods_CleanToDo.framework */; };
+		AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		7F2484F2B97EFDAE284F72B2 /* Pods-CleanToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanToDoTests.debug.xcconfig"; path = "Target Support Files/Pods-CleanToDoTests/Pods-CleanToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C2AD22D0F5ADD4ADC797463 /* Pods-CleanToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanToDo.release.xcconfig"; path = "Target Support Files/Pods-CleanToDo/Pods-CleanToDo.release.xcconfig"; sourceTree = "<group>"; };
 		9F7AE874B772AEC7CA90507F /* Pods_CleanToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosCoreDataManagerTests.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE2743EF27B77F3E00CC9E0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AEDA786627B37A9D009B608D = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		AEDA788B27B37A9E009B608D /* CleanToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE2743EF27B77F3E00CC9E0F /* Services */,
 			);
 			path = CleanToDoTests;
 			sourceTree = "<group>";
@@ -592,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
