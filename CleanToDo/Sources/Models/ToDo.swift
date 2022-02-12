@@ -32,3 +32,9 @@ extension ToDo {
     )
   }
 }
+
+extension ToDo: Equatable {
+  static func == (lhs: ToDo, rhs: ToDo) -> Bool {
+    return lhs.id == rhs.id
+  }
+}
