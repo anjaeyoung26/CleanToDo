@@ -14,18 +14,31 @@ import UIKit
 
 enum DetailToDo
 {
-  // MARK: Use cases
+  enum Delete {
+    struct Request {
+      var id: Int16
+    }
+    
+    struct Response {
+      var completion: ErrorCompletion
+    }
+    
+    struct ViewModel {
+      var isDelete: Bool
+    }
+  }
   
-  enum Something
-  {
-    struct Request
-    {
+  enum Update {
+    struct Request {
+      var todo: ToDo
     }
-    struct Response
-    {
+    
+    struct Response {
+      var completion: UpdateCompletion
     }
-    struct ViewModel
-    {
+    
+    struct ViewModel {
+      var todo: ToDo?
     }
   }
 }

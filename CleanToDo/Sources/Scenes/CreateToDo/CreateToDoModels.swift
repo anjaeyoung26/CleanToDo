@@ -14,18 +14,17 @@ import UIKit
 
 enum CreateToDo
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+  enum Create {
+    struct Request {
+      var todo: ToDo
     }
-    struct Response
-    {
+    
+    struct Response {
+      var completion: CreateCompletion
     }
-    struct ViewModel
-    {
+    
+    struct ViewModel {
+      var todo: ToDo?
     }
   }
 }
