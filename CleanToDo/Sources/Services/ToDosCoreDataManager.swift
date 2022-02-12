@@ -21,6 +21,7 @@ protocol ToDosCoreDataManagerProtocol {
   func fetchToDo(id: Int16, completion: @escaping FetchToDoCompletion)
   func fetchToDos(date: Date, completion: @escaping FetchToDosCompletion)
   func deleteToDo(id: Int16, completion: @escaping ErrorCompletion)
+  func deleteAllToDos(completion: @escaping ErrorCompletion)
   func createToDo(_ todo: ToDo, completion: @escaping CreateCompletion)
   func updateToDo(_ todo: ToDo, completion: @escaping UpdateCompletion)
   
@@ -126,6 +127,20 @@ class ToDosCoreDataManager: ToDosCoreDataManagerProtocol {
         }
       } else {
         completion(ToDosCoreDataManagerError.notExist)
+      }
+    }
+  }
+  
+  func deleteAllToDos(completion: @escaping ErrorCompletion) {
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedToDo")
+    let batch = NSBatchDeleteRequest(fetchRequest: request)
+    
+    context.perform {
+      do {
+        try self.context.execute(batch)
+        completion(nil)
+      } catch {
+        completion(ToDosCoreDataManagerError.canNotSave(error))
       }
     }
   }
