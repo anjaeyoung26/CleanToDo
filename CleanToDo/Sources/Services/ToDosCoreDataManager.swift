@@ -96,8 +96,11 @@ class ToDosCoreDataManager: ToDosCoreDataManagerProtocol {
   }
   
   func fetchToDos(date: Date, completion: @escaping FetchToDosCompletion) {
-    let startPredicate = NSPredicate(format: "startDate <= %@", date as NSDate)
-    let duePredicate = NSPredicate(format: "endDate >= %@", date as NSDate)
+    let startOfDay = Calendar.current.startOfDay(for: date) as NSDate
+    let endOfDay = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date)! as NSDate
+    
+    let startPredicate = NSPredicate(format: "startDate >= %@ AND startDate <= %@", startOfDay, endOfDay)
+    let duePredicate = NSPredicate(format: "dueDate >= %@ AND dueDate <= %@", startOfDay, endOfDay)
     let sortDescriptor = NSSortDescriptor(key: "startDate", ascending: false)
     
     let request = NSFetchRequest<ManagedToDo>(entityName: "ManagedToDo")
