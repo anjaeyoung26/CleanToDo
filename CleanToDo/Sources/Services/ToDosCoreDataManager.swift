@@ -104,7 +104,7 @@ class ToDosCoreDataManager: ToDosCoreDataManagerProtocol {
     let sortDescriptor = NSSortDescriptor(key: "startDate", ascending: false)
     
     let request = NSFetchRequest<ManagedToDo>(entityName: "ManagedToDo")
-    request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [startPredicate, duePredicate])
+    request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [startPredicate, duePredicate])
     request.sortDescriptors = [sortDescriptor]
     
     context.perform {
