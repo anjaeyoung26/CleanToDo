@@ -13,6 +13,9 @@
 		AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */; };
 		AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */; };
 		AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */; };
+		AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */; };
+		AE27440227BDD2D500CC9E0F /* ListToDosWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */; };
+		AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -72,6 +75,9 @@
 		AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosCoreDataManagerTests.swift; sourceTree = "<group>"; };
 		AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosPresenterTests.swift; sourceTree = "<group>"; };
 		AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosPresentationLogicSpy.swift; sourceTree = "<group>"; };
+		AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosWorkerSpy.swift; sourceTree = "<group>"; };
+		AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosInteractorTests.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -177,10 +183,21 @@
 		AE2743FA27BDC9B600CC9E0F /* ListToDos */ = {
 			isa = PBXGroup;
 			children = (
+				AE27440527BDDBC700CC9E0F /* TestDoubles */,
+				AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */,
 				AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */,
-				AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */,
 			);
 			path = ListToDos;
+			sourceTree = "<group>";
+		};
+		AE27440527BDDBC700CC9E0F /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */,
+				AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */,
+				AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 		AEDA786627B37A9D009B608D = {
@@ -625,7 +642,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */,
 				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
+				AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */,
+				AE27440227BDD2D500CC9E0F /* ListToDosWorkerSpy.swift in Sources */,
 				AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */,
 				AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */,
 			);
