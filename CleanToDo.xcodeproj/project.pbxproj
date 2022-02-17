@@ -11,6 +11,8 @@
 		40D1EE8F9F052CB11A33DEDE /* Pods_CleanToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66FE43F9F70A3F40E8E4545 /* Pods_CleanToDoTests.framework */; };
 		8F197FD37C0F3303573E033D /* Pods_CleanToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7AE874B772AEC7CA90507F /* Pods_CleanToDo.framework */; };
 		AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */; };
+		AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */; };
+		AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		9C2AD22D0F5ADD4ADC797463 /* Pods-CleanToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanToDo.release.xcconfig"; path = "Target Support Files/Pods-CleanToDo/Pods-CleanToDo.release.xcconfig"; sourceTree = "<group>"; };
 		9F7AE874B772AEC7CA90507F /* Pods_CleanToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosCoreDataManagerTests.swift; sourceTree = "<group>"; };
+		AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosPresenterTests.swift; sourceTree = "<group>"; };
+		AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -162,6 +166,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		AE2743F927BDC9B100CC9E0F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AE2743FA27BDC9B600CC9E0F /* ListToDos */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AE2743FA27BDC9B600CC9E0F /* ListToDos */ = {
+			isa = PBXGroup;
+			children = (
+				AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */,
+				AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */,
+			);
+			path = ListToDos;
+			sourceTree = "<group>";
+		};
 		AEDA786627B37A9D009B608D = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +219,7 @@
 		AEDA788B27B37A9E009B608D /* CleanToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE2743F927BDC9B100CC9E0F /* Scenes */,
 				AE2743EF27B77F3E00CC9E0F /* Services */,
 			);
 			path = CleanToDoTests;
@@ -603,7 +625,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
 				AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */,
+				AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
