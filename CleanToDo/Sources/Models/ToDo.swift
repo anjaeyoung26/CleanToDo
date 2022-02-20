@@ -15,6 +15,9 @@ struct ToDo {
   var dueDate: Date
 }
 
+
+// MARK: - Fixture
+
 extension ToDo {
   static func fixture(
     id: Int16,
@@ -32,6 +35,9 @@ extension ToDo {
     )
   }
 }
+
+
+// MARK: - Equatable
 
 extension ToDo: Equatable {
   static func == (lhs: ToDo, rhs: ToDo) -> Bool {
