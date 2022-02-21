@@ -16,6 +16,10 @@
 		AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */; };
 		AE27440227BDD2D500CC9E0F /* ListToDosWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */; };
 		AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */; };
+		AE27441327BF82CB00CC9E0F /* ListToDosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441227BF82CB00CC9E0F /* ListToDosViewControllerTests.swift */; };
+		AE27441527BF85F700CC9E0F /* ListToDosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441427BF85F700CC9E0F /* ListToDosCell.swift */; };
+		AE27441A27C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441927C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift */; };
+		AE27441C27C2565700CC9E0F /* ListToDosRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -78,6 +82,10 @@
 		AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosWorkerSpy.swift; sourceTree = "<group>"; };
 		AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosInteractorTests.swift; sourceTree = "<group>"; };
+		AE27441227BF82CB00CC9E0F /* ListToDosViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosViewControllerTests.swift; sourceTree = "<group>"; };
+		AE27441427BF85F700CC9E0F /* ListToDosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosCell.swift; sourceTree = "<group>"; };
+		AE27441927C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosRouterSpy.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 				AE27440527BDDBC700CC9E0F /* TestDoubles */,
 				AE27440327BDD3B000CC9E0F /* ListToDosInteractorTests.swift */,
 				AE2743FB27BDC9E400CC9E0F /* ListToDosPresenterTests.swift */,
+				AE27441227BF82CB00CC9E0F /* ListToDosViewControllerTests.swift */,
 			);
 			path = ListToDos;
 			sourceTree = "<group>";
@@ -193,8 +202,10 @@
 		AE27440527BDDBC700CC9E0F /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				AE27441927C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift */,
 				AE2743FD27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift */,
 				AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */,
+				AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */,
 				AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */,
 			);
 			path = TestDoubles;
@@ -319,6 +330,7 @@
 		AEDA78AD27B37D78009B608D /* ListToDos */ = {
 			isa = PBXGroup;
 			children = (
+				AE27441427BF85F700CC9E0F /* ListToDosCell.swift */,
 				AEDA78CD27B37FD9009B608D /* ListToDosInteractor.swift */,
 				AEDA78CB27B37FD9009B608D /* ListToDosModels.swift */,
 				AEDA78C827B37FD9009B608D /* ListToDosPresenter.swift */,
@@ -626,6 +638,7 @@
 				AEDA78E727B38E65009B608D /* ToDosCoreDataManager.swift in Sources */,
 				AEDA78B727B37F90009B608D /* CreateToDoWorker.swift in Sources */,
 				AEDA78E127B382BD009B608D /* ToDo.swift in Sources */,
+				AE27441527BF85F700CC9E0F /* ListToDosCell.swift in Sources */,
 				AEDA78C627B37FC9009B608D /* DetailToDoViewController.swift in Sources */,
 				AEDA78B627B37F90009B608D /* CreateToDoPresenter.swift in Sources */,
 				AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */,
@@ -646,8 +659,11 @@
 				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
 				AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */,
 				AE27440227BDD2D500CC9E0F /* ListToDosWorkerSpy.swift in Sources */,
+				AE27441327BF82CB00CC9E0F /* ListToDosViewControllerTests.swift in Sources */,
+				AE27441A27C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift in Sources */,
 				AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */,
 				AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */,
+				AE27441C27C2565700CC9E0F /* ListToDosRouterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
