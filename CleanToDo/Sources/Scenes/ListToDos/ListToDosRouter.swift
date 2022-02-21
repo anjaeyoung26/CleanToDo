@@ -12,49 +12,38 @@
 
 import UIKit
 
-@objc protocol ListToDosRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol ListToDosRoutingLogic {
+  func routeToDetail()
 }
 
-protocol ListToDosDataPassing
-{
+protocol ListToDosDataPassing {
   var dataStore: ListToDosDataStore? { get }
 }
 
-class ListToDosRouter: NSObject, ListToDosRoutingLogic, ListToDosDataPassing
-{
+class ListToDosRouter: NSObject, ListToDosRoutingLogic, ListToDosDataPassing {
   weak var viewController: ListToDosViewController?
   var dataStore: ListToDosDataStore?
   
-  // MARK: Routing
+  func routeToDetail() {
+    let destinationViewController = DetailToDoViewController()
+    
+    guard var destinationDataStore = destinationViewController.router?.dataStore,
+          let viewController = viewController,
+          let dataStore = dataStore else {
+      fatalError("Must set up VIP components.")
+    }
+    
+    passDataToDetail(source: dataStore, destination: &destinationDataStore)
+    navigateToDetail(source: viewController, destination: destinationViewController)
+  }
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
+  func passDataToDetail(source: ListToDosDataStore, destination: inout DetailToDoDataStore) {
+    let selectedRow = viewController?.tableView.indexPathForSelectedRow?.row
+    let selectedToDo = source.todos?[selectedRow!]
+    destination.todo = selectedToDo
+  }
   
-  //func navigateToSomewhere(source: ListToDosViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: ListToDosDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+  func navigateToDetail(source: ListToDosViewController, destination: DetailToDoViewController) {
+    source.show(destination, sender: nil)
+  }
 }

@@ -12,30 +12,24 @@
 
 import UIKit
 
-protocol ListToDosBusinessLogic
-{
-  func doSomething(request: ListToDos.Something.Request)
+protocol ListToDosBusinessLogic {
+  func requestToDos(request: ListToDos.GetToDos.Request)
 }
 
-protocol ListToDosDataStore
-{
-  //var name: String { get set }
+protocol ListToDosDataStore {
+  var todos: [ToDo]? { get set }
 }
 
-class ListToDosInteractor: ListToDosBusinessLogic, ListToDosDataStore
-{
+class ListToDosInteractor: ListToDosBusinessLogic, ListToDosDataStore {
   var presenter: ListToDosPresentationLogic?
-  var worker: ListToDosWorker?
-  //var name: String = ""
+  var worker: ListToDosWorkerLogic?
+  var todos: [ToDo]?
   
-  // MARK: Do something
-  
-  func doSomething(request: ListToDos.Something.Request)
-  {
-    worker = ListToDosWorker()
-    worker?.doSomeWork()
-    
-    let response = ListToDos.Something.Response()
-    presenter?.presentSomething(response: response)
+  func requestToDos(request: ListToDos.GetToDos.Request) {
+    worker?.requestToDos(date: request.date) { todos in
+      let response = ListToDos.GetToDos.Response(todos: todos)
+      self.presenter?.presentToDos(response: response)
+      self.todos = todos
+    }
   }
 }

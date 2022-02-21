@@ -12,78 +12,107 @@
 
 import UIKit
 
-protocol ListToDosDisplayLogic: AnyObject
-{
-  func displaySomething(viewModel: ListToDos.Something.ViewModel)
+protocol ListToDosDisplayLogic: AnyObject {
+  func displayToDos(viewModel: ListToDos.GetToDos.ViewModel)
 }
 
-class ListToDosViewController: UIViewController, ListToDosDisplayLogic
-{
-  var interactor: ListToDosBusinessLogic?
-  var router: (NSObjectProtocol & ListToDosRoutingLogic & ListToDosDataPassing)?
-
-  // MARK: Object lifecycle
+class ListToDosViewController: UIViewController {
+  var tableView: UITableView = {
+    let tableView = UITableView()
+    return tableView
+  }()
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ListToDosInteractor()
-    let presenter = ListToDosPresenter()
-    let router = ListToDosRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+  var todos: [ToDo] = [] {
+    didSet {
+      tableView.reloadData()
     }
   }
   
-  // MARK: View lifecycle
+  var router: (NSObjectProtocol & ListToDosRoutingLogic & ListToDosDataPassing)?
+  var interactor: ListToDosBusinessLogic?
   
-  override func viewDidLoad()
-  {
+  init() {
+    super.init(nibName: nil, bundle: nil)
+    setup()
+  }
+  
+  required init(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented.")
+  }
+  
+  override func viewDidLoad() {
     super.viewDidLoad()
-    doSomething()
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.register(
+      ListToDosCell.self,
+      forCellReuseIdentifier: ListToDosCell.identifier
+    )
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = ListToDos.Something.Request()
-    interactor?.doSomething(request: request)
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    requestToDos(date: Date())
   }
   
-  func displaySomething(viewModel: ListToDos.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
+  private func setup() {
+    let interactor = ListToDosInteractor()
+    let presenter = ListToDosPresenter()
+    let router = ListToDosRouter()
+    
+    let viewController = self
+    viewController.interactor = interactor
+    viewController.router = router
+    
+    router.viewController = viewController
+    router.dataStore = interactor
+    
+    presenter.viewController = viewController
+    interactor.presenter = presenter
+  }
+  
+  private func requestToDos(date: Date) {
+    let request = ListToDos.GetToDos.Request(date: date)
+    interactor?.requestToDos(request: request)
+  }
+}
+
+
+// MARK: - ListToDosDisplayLogic
+
+extension ListToDosViewController: ListToDosDisplayLogic {
+  func displayToDos(viewModel: ListToDos.GetToDos.ViewModel) {
+    if let displayToDos = viewModel.todos {
+      todos = displayToDos
+    }
+  }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension ListToDosViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    router?.routeToDetail()
+  }
+}
+
+
+// MARK: - UITableViewDataSource
+
+extension ListToDosViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return todos.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: ListToDosCell.identifier,
+      for: indexPath) as? ListToDosCell else {
+      return UITableViewCell()
+    }
+    cell.update(todo: todos[indexPath.row])
+    return cell
   }
 }

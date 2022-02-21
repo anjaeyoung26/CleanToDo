@@ -12,9 +12,8 @@
 
 import UIKit
 
-enum ListToDos
-{
-  enum GetList {
+enum ListToDos {
+  enum GetToDos {
     struct Request {
       var date: Date
     }

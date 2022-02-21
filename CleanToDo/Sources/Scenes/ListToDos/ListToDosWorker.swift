@@ -12,9 +12,20 @@
 
 import UIKit
 
-class ListToDosWorker
-{
-  func doSomeWork()
-  {
+protocol ListToDosWorkerLogic {
+  func requestToDos(date: Date, completion: @escaping FetchToDosCompletion)
+}
+
+class ListToDosWorker: ListToDosWorkerLogic {
+  private var manager: ToDosCoreDataManager
+  
+  init() {
+    manager = ToDosCoreDataManager(type: .persistent)
+  }
+  
+  func requestToDos(date: Date, completion: @escaping FetchToDosCompletion) {
+    manager.fetchToDos(date: date) { todos in
+      completion(todos)
+    }
   }
 }
