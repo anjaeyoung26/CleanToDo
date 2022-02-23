@@ -9,10 +9,10 @@
 
 class ListToDosDisplayLogicSpy: ListToDosDisplayLogic {
   public var didDisplayToDosCalled: Bool = false
-  public var viewModel: ListToDos.GetToDos.ViewModel!
+  public var todos: [ToDo]!
   
   func displayToDos(viewModel: ListToDos.GetToDos.ViewModel) {
     didDisplayToDosCalled = true
-    self.viewModel = viewModel
+    todos = viewModel.todos
   }
 }

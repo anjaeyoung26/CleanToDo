@@ -36,7 +36,7 @@ class ListToDosPresenterTests: XCTestCase {
     XCTAssertTrue(viewController.didDisplayToDosCalled)
   }
   
-  func testPresentFetchedToDosShouldEqualDisplayedToDos() {
+  func testPresentFetchedToDosShouldEqualDisplayedToDos() throws {
     // Given
     let viewController = ListToDosDisplayLogicSpy()
     sut.viewController = viewController
@@ -57,8 +57,7 @@ class ListToDosPresenterTests: XCTestCase {
     sut.presentToDos(response: response)
     
     // Then
-    let displayedToDos = viewController.viewModel.todos!
-    for todo in displayedToDos {
+    for todo in viewController.todos {
       XCTAssertEqual(todo.id, 1)
       XCTAssertEqual(todo.title, "Title")
       XCTAssertEqual(todo.content, "Content")
