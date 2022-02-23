@@ -20,6 +20,9 @@
 		AE27441527BF85F700CC9E0F /* ListToDosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441427BF85F700CC9E0F /* ListToDosCell.swift */; };
 		AE27441A27C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441927C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift */; };
 		AE27441C27C2565700CC9E0F /* ListToDosRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */; };
+		AE27443227C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */; };
+		AE27443427C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */; };
+		AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -86,6 +89,9 @@
 		AE27441427BF85F700CC9E0F /* ListToDosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosCell.swift; sourceTree = "<group>"; };
 		AE27441927C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosBusinessLogicSpy.swift; sourceTree = "<group>"; };
 		AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToDosRouterSpy.swift; sourceTree = "<group>"; };
+		AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoWorkerSpy.swift; sourceTree = "<group>"; };
+		AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoPresentationSpy.swift; sourceTree = "<group>"; };
+		AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoInteractorTests.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		AE2743F927BDC9B100CC9E0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AE27442327C454F600CC9E0F /* DetailToDo */,
 				AE2743FA27BDC9B600CC9E0F /* ListToDos */,
 			);
 			path = Scenes;
@@ -207,6 +214,24 @@
 				AE2743FF27BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift */,
 				AE27441B27C2565700CC9E0F /* ListToDosRouterSpy.swift */,
 				AE27440127BDD2D500CC9E0F /* ListToDosWorkerSpy.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		AE27442327C454F600CC9E0F /* DetailToDo */ = {
+			isa = PBXGroup;
+			children = (
+				AE27442427C454FD00CC9E0F /* TestDoubles */,
+				AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */,
+			);
+			path = DetailToDo;
+			sourceTree = "<group>";
+		};
+		AE27442427C454FD00CC9E0F /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */,
+				AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -656,14 +681,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */,
+				AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */,
 				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
 				AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */,
 				AE27440227BDD2D500CC9E0F /* ListToDosWorkerSpy.swift in Sources */,
+				AE27443427C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift in Sources */,
 				AE27441327BF82CB00CC9E0F /* ListToDosViewControllerTests.swift in Sources */,
 				AE27441A27C005EF00CC9E0F /* ListToDosBusinessLogicSpy.swift in Sources */,
 				AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */,
 				AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */,
 				AE27441C27C2565700CC9E0F /* ListToDosRouterSpy.swift in Sources */,
+				AE27443227C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
