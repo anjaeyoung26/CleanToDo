@@ -23,6 +23,8 @@
 		AE27443227C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */; };
 		AE27443427C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */; };
 		AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */; };
+		AE27443A27C6655A00CC9E0F /* DetailToDoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443927C6655A00CC9E0F /* DetailToDoPresenterTests.swift */; };
+		AE27443C27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443B27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -92,6 +94,8 @@
 		AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoWorkerSpy.swift; sourceTree = "<group>"; };
 		AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoPresentationSpy.swift; sourceTree = "<group>"; };
 		AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoInteractorTests.swift; sourceTree = "<group>"; };
+		AE27443927C6655A00CC9E0F /* DetailToDoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoPresenterTests.swift; sourceTree = "<group>"; };
+		AE27443B27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 			children = (
 				AE27442427C454FD00CC9E0F /* TestDoubles */,
 				AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */,
+				AE27443927C6655A00CC9E0F /* DetailToDoPresenterTests.swift */,
 			);
 			path = DetailToDo;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 		AE27442427C454FD00CC9E0F /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				AE27443B27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift */,
 				AE27443327C4B7B400CC9E0F /* DetailToDoPresentationSpy.swift */,
 				AE27443127C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift */,
 			);
@@ -680,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE27443A27C6655A00CC9E0F /* DetailToDoPresenterTests.swift in Sources */,
 				AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */,
 				AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */,
 				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
@@ -692,6 +699,7 @@
 				AE2743FE27BDCA5300CC9E0F /* ListToDosDisplayLogicSpy.swift in Sources */,
 				AE27441C27C2565700CC9E0F /* ListToDosRouterSpy.swift in Sources */,
 				AE27443227C4B7A500CC9E0F /* DetailToDoWorkerSpy.swift in Sources */,
+				AE27443C27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
