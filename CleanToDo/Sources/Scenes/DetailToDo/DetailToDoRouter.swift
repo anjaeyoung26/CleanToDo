@@ -25,6 +25,10 @@ class DetailToDoRouter: NSObject, DetailToDoRoutingLogic, DetailToDoDataPassing 
   var dataStore: DetailToDoDataStore?
   
   func routeToList() {
-    
+    guard let viewController = viewController else {
+      fatalError("Must set up VIP components.")
+    }
+
+    viewController.dismiss(animated: true)
   }
 }

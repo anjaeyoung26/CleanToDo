@@ -86,14 +86,35 @@ class DetailToDoViewControllerTests: XCTestCase {
     XCTAssertEqual(sut.contentLabel.text, viewModel.todo.content)
   }
   
-  func testDeleteToDoShouldCallDismissIfSuccess() {
+  func testDeleteToDoShouldCallRouterIfSuccess() {
     // Given
-    let dismissalVerifier = DismissalVerifier()
+    let router = DetailToDoRouterSpy()
+    sut.router = router
+    
     loadView()
     
     // When
     let viewModel = DetailToDo.DeleteToDo.ViewModel(error: nil)
     sut.deleteToDo(viewModel: viewModel)
+    
+    // Then
+    XCTAssertTrue(router.didRouteToListCalled)
+  }
+  
+  func testDeleteToDoShouldCallDismissIfSuccess() {
+    // Given
+    let didDismiss = expectation(description: "Waiting for the deleteToDo() call to dismiss.")
+    
+    let dismissalVerifier = DismissalVerifier()
+    dismissalVerifier.testCompletion = { didDismiss.fulfill() }
+    
+    loadView()
+    
+    // When
+    let viewModel = DetailToDo.DeleteToDo.ViewModel(error: nil)
+    sut.deleteToDo(viewModel: viewModel)
+    
+    waitForExpectations(timeout: 1.0)
     
     // Then
     dismissalVerifier.verify(animated: true, dismissedViewController: sut)

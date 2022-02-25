@@ -129,7 +129,7 @@ extension DetailToDoViewController: DetailToDoDisplayLogic {
         viewController: self
       )
     } else {
-      dismiss(animated: true)
+      router?.routeToList()
     }
   }
   
