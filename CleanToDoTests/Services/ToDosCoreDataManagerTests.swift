@@ -5,9 +5,9 @@
 //  Created by 재영 on 2022/02/09.
 //
 
+@testable import CleanToDo
 import CoreData
 import XCTest
-@testable import CleanToDo
 
 class ToDosCoreDataManagerTests: XCTestCase {
   private var sut: ToDosCoreDataManagerProtocol!

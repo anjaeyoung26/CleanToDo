@@ -5,11 +5,10 @@
 //  Created by 재영 on 2022/02/24.
 //
 
+@testable import CleanToDo
 import ViewControllerPresentationSpy
-
 import Foundation
 import XCTest
-@testable import CleanToDo
 
 class DetailToDoViewControllerTests: XCTestCase {
   private var sut: DetailToDoViewController!
@@ -137,13 +136,13 @@ class DetailToDoViewControllerTests: XCTestCase {
     waitForExpectations(timeout: 1.0)
     
     // Then
-    alertVerifier.verify(
-      title: "Delete Error",
-      message: error.description,
-      animated: true,
-      actions: [.default("OK")],
-      presentingViewController: sut
-    )
+    XCTAssertEqual(alertVerifier.presentingViewController, sut)
+    XCTAssertEqual(alertVerifier.message, error.description)
+    XCTAssertEqual(alertVerifier.title, "Delete Error")
+    XCTAssertEqual(alertVerifier.actions.count, 1)
+    XCTAssertEqual(alertVerifier.actions[0].title, "OK")
+    XCTAssertEqual(alertVerifier.actions[0].style, .default)
+    XCTAssertTrue(alertVerifier.animated)
   }
   
   func testUpdateToDoShouldUpdateIfSuccess() {
@@ -176,12 +175,12 @@ class DetailToDoViewControllerTests: XCTestCase {
     waitForExpectations(timeout: 1.0)
     
     // Then
-    alertVerifier.verify(
-      title: "Update Error",
-      message: error.description,
-      animated: true,
-      actions: [.default("OK")],
-      presentingViewController: sut
-    )
+    XCTAssertEqual(alertVerifier.presentingViewController, sut)
+    XCTAssertEqual(alertVerifier.message, error.description)
+    XCTAssertEqual(alertVerifier.title, "Update Error")
+    XCTAssertEqual(alertVerifier.actions.count, 1)
+    XCTAssertEqual(alertVerifier.actions[0].title, "OK")
+    XCTAssertEqual(alertVerifier.actions[0].style, .default)
+    XCTAssertTrue(alertVerifier.animated)
   }
 }

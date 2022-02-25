@@ -5,8 +5,8 @@
 //  Created by 재영 on 2022/02/25.
 //
 
-import XCTest
 @testable import CleanToDo
+import XCTest
 
 class CreateToDoInteractorTests: XCTestCase {
   private var sut: CreateToDoInteractor!

@@ -12,8 +12,7 @@
 
 import UIKit
 
-enum DetailToDo
-{
+enum DetailToDo {
   enum GetToDo {
     struct Request {
       

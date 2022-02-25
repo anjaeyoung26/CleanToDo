@@ -5,8 +5,8 @@
 //  Created by 재영 on 2022/02/24.
 //
 
-import Foundation
 @testable import CleanToDo
+import Foundation
 
 class DetailToDoRouterSpy: NSObject, DetailToDoRoutingLogic, DetailToDoDataPassing {
   var didRouteToListCalled: Bool = false

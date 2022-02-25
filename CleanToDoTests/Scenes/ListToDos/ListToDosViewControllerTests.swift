@@ -5,8 +5,8 @@
 //  Created by 재영 on 2022/02/18.
 //
 
-import XCTest
 @testable import CleanToDo
+import XCTest
 
 class ListToDosViewControllerTests: XCTestCase {
   private var sut: ListToDosViewController!

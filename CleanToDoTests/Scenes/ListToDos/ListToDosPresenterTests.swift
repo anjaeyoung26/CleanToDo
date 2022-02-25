@@ -5,8 +5,8 @@
 //  Created by 재영 on 2022/02/17.
 //
 
-import XCTest
 @testable import CleanToDo
+import XCTest
 
 class ListToDosPresenterTests: XCTestCase {
   private var sut: ListToDosPresenter!

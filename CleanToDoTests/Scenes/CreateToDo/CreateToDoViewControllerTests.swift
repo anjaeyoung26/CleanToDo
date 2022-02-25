@@ -5,10 +5,9 @@
 //  Created by 재영 on 2022/02/25.
 //
 
-import ViewControllerPresentationSpy
-
-import XCTest
 @testable import CleanToDo
+import ViewControllerPresentationSpy
+import XCTest
 
 class CreateToDoViewControllerTests: XCTestCase {
   private var sut: CreateToDoViewController!
@@ -82,12 +81,12 @@ class CreateToDoViewControllerTests: XCTestCase {
     waitForExpectations(timeout: 1.0)
     
     // Then
-    alertVerifier.verify(
-      title: "Create Error",
-      message: error.description,
-      animated: true,
-      actions: [.default("OK")],
-      presentingViewController: sut
-    )
+    XCTAssertEqual(alertVerifier.presentingViewController, sut)
+    XCTAssertEqual(alertVerifier.message, error.description)
+    XCTAssertEqual(alertVerifier.title, "Create Error")
+    XCTAssertEqual(alertVerifier.actions.count, 1)
+    XCTAssertEqual(alertVerifier.actions[0].title, "OK")
+    XCTAssertEqual(alertVerifier.actions[0].style, .default)
+    XCTAssertTrue(alertVerifier.animated)
   }
 }

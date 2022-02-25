@@ -5,8 +5,8 @@
 //  Created by 재영 on 2022/02/17.
 //
 
-import Foundation
 @testable import CleanToDo
+import Foundation
 
 class ListToDosWorkerSpy: ListToDosWorkerLogic {
   var didRequestToDosCalled: Bool = false
