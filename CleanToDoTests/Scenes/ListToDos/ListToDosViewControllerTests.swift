@@ -43,8 +43,8 @@ class ListToDosViewControllerTests: XCTestCase {
   
   func testWhenViewWillAppearShouldCallRequestToDos() {
     // Given
-    let businessLogic = ListToDosBusinessLogicSpy()
-    sut.interactor = businessLogic
+    let interactor = ListToDosBusinessLogicSpy()
+    sut.interactor = interactor
     
     loadView()
     
@@ -52,7 +52,7 @@ class ListToDosViewControllerTests: XCTestCase {
     sut.viewWillAppear(true)
     
     // Then
-    XCTAssertTrue(businessLogic.didRequestToDosCalled)
+    XCTAssertTrue(interactor.didRequestToDosCalled)
   }
   
   func testDisplayFetchedToDosInTableView() {
@@ -60,7 +60,8 @@ class ListToDosViewControllerTests: XCTestCase {
     loadView()
     
     // When
-    let viewModel = ListToDos.GetToDos.ViewModel(todos: [ToDo.fixture(id: 1, title: "Title", content: "Content")])
+    let fixtures = [ToDo.fixture(id: 1, title: "Title", content: "Content")]
+    let viewModel = ListToDos.GetToDos.ViewModel(todos: fixtures)
     sut.displayToDos(viewModel: viewModel)
     
     // Then

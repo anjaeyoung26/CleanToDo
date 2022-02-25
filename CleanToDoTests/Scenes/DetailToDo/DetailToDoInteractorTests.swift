@@ -69,6 +69,6 @@ class DetailToDoInteractorTests: XCTestCase {
     // Then
     XCTAssertTrue(presenter.didUpdateToDoCalled)
     XCTAssertTrue(worker.didUpdateToDoCalled)
-    XCTAssertEqual(sut.todo.title, "Update")
+    XCTAssertEqual(sut.todo?.title, "Update")
   }
 }
