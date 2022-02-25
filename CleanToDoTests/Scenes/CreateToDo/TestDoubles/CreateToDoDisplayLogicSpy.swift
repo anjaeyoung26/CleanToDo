@@ -8,8 +8,8 @@
 @testable import CleanToDo
 
 class CreateToDoDisplayLogicSpy: CreateToDoDisplayLogic {
-  public var didCreateTodoCalled: Bool = false
-  public var error: ToDosCoreDataManagerError!
+  var didCreateTodoCalled: Bool = false
+  var error: ToDosCoreDataManagerError!
   
   func createToDo(viewModel: CreateToDo.CreateToDo.ViewModel) {
     didCreateTodoCalled = true

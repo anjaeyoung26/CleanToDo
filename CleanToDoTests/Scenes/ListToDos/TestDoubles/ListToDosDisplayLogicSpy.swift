@@ -8,8 +8,8 @@
 @testable import CleanToDo
 
 class ListToDosDisplayLogicSpy: ListToDosDisplayLogic {
-  public var didDisplayToDosCalled: Bool = false
-  public var todos: [ToDo]!
+  var didDisplayToDosCalled: Bool = false
+  var todos: [ToDo]!
   
   func displayToDos(viewModel: ListToDos.GetToDos.ViewModel) {
     didDisplayToDosCalled = true

@@ -8,12 +8,12 @@
 @testable import CleanToDo
 
 class DetailToDoDisplayLogicSpy: DetailToDoDisplayLogic {
-  public var didDisplayToDoCalled: Bool = false
-  public var didDeleteToDoCalled: Bool = false
-  public var didUpdateToDoCalled: Bool = false
+  var didDisplayToDoCalled: Bool = false
+  var didDeleteToDoCalled: Bool = false
+  var didUpdateToDoCalled: Bool = false
   
-  public var error: ToDosCoreDataManagerError!
-  public var todo: ToDo!
+  var error: ToDosCoreDataManagerError!
+  var todo: ToDo!
   
   func displayToDo(viewModel: DetailToDo.GetToDo.ViewModel) {
     didDisplayToDoCalled = true

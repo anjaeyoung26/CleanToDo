@@ -8,9 +8,9 @@
 @testable import CleanToDo
 
 class DetailToDoBusinessLogicSpy: DetailToDoBusinessLogic {
-  public var didGetToDoCalled: Bool = false
-  public var didDeleteToDoCalled: Bool = false
-  public var didUpdateToDoCalled: Bool = false
+  var didGetToDoCalled: Bool = false
+  var didDeleteToDoCalled: Bool = false
+  var didUpdateToDoCalled: Bool = false
   
   func getToDo(request: DetailToDo.GetToDo.Request) {
     didGetToDoCalled = true

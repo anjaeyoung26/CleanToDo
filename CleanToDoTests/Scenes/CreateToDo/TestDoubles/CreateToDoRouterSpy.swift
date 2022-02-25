@@ -9,8 +9,8 @@ import Foundation
 @testable import CleanToDo
 
 class CreateToDoRouterSpy: NSObject, CreateToDoRoutingLogic, CreateToDoDataPassing {
-  public var didRouteToListCalled: Bool = false
-  public var dataStore: CreateToDoDataStore?
+  var didRouteToListCalled: Bool = false
+  var dataStore: CreateToDoDataStore?
   
   func routeToList() {
     didRouteToListCalled = true

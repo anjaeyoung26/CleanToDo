@@ -8,8 +8,8 @@
 @testable import CleanToDo
 
 class DetailToDoWorkerSpy: DetailToDoWorkerLogic {
-  public var didDeleteToDoCalled: Bool = false
-  public var didUpdateToDoCalled: Bool = false
+  var didDeleteToDoCalled: Bool = false
+  var didUpdateToDoCalled: Bool = false
   
   func deleteToDo(id: Int16, completion: @escaping ErrorCompletion) {
     didDeleteToDoCalled = true

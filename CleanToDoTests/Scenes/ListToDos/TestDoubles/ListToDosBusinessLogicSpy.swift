@@ -8,7 +8,7 @@
 @testable import CleanToDo
 
 class ListToDosBusinessLogicSpy: ListToDosBusinessLogic {
-  public var didRequestToDosCalled: Bool = false
+  var didRequestToDosCalled: Bool = false
   
   func requestToDos(request: ListToDos.GetToDos.Request) {
     didRequestToDosCalled = true

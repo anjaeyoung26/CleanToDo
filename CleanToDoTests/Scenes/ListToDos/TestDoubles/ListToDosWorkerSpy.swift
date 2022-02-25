@@ -9,7 +9,7 @@ import Foundation
 @testable import CleanToDo
 
 class ListToDosWorkerSpy: ListToDosWorkerLogic {
-  public var didRequestToDosCalled: Bool = false
+  var didRequestToDosCalled: Bool = false
   
   func requestToDos(date: Date, completion: @escaping FetchToDosCompletion) {
     didRequestToDosCalled = true

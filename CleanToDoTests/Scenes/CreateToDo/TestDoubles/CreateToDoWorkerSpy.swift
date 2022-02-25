@@ -8,7 +8,7 @@
 @testable import CleanToDo
 
 class CreateToDoWorkerSpy: CreateToDoWorkerLogic {
-  public var didCreateToDoCalled: Bool = false
+  var didCreateToDoCalled: Bool = false
   
   func createToDo(_ todo: ToDo, completion: @escaping CreateCompletion) {
     didCreateToDoCalled = true
