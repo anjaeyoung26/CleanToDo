@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 811a0572d84692a3abf2b64f9a2fe57a87d45920
+PODS:
+  - ViewControllerPresentationSpy (6.0.0)
+
+DEPENDENCIES:
+  - ViewControllerPresentationSpy (~> 6.0)
+
+SPEC REPOS:
+  trunk:
+    - ViewControllerPresentationSpy
+
+SPEC CHECKSUMS:
+  ViewControllerPresentationSpy: 16d2f083f506c0a18fe82e65d2c19fbea9aa66af
+
+PODFILE CHECKSUM: 3bd7b0f77c39dd1eccc5512041bc6c0b92e48e29
 
 COCOAPODS: 1.10.1
