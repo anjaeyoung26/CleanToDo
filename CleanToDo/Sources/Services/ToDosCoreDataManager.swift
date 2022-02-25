@@ -48,6 +48,16 @@ extension ToDosCoreDataManagerError: Equatable {
   }
 }
 
+extension ToDosCoreDataManagerError: CustomStringConvertible {
+  var description: String {
+    switch self {
+    case .canNotSave(let error): return "Context can not save with error : \(error)"
+    case .alreadyExist: return "Managed object already exist"
+    case .notExist: return "Managed object does not exist"
+    }
+  }
+}
+
 
 // MARK: - ToDosCoreDataManagerStorageTyep
 
