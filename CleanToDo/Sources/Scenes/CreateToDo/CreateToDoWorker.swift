@@ -12,9 +12,20 @@
 
 import UIKit
 
-class CreateToDoWorker
-{
-  func doSomeWork()
-  {
+protocol CreateToDoWorkerLogic {
+  func createToDo(_ todo: ToDo, completion: @escaping CreateCompletion)
+}
+
+class CreateToDoWorker: CreateToDoWorkerLogic {
+  private var manager: ToDosCoreDataManager
+  
+  init() {
+    manager = ToDosCoreDataManager(type: .persistent)
+  }
+  
+  func createToDo(_ todo: ToDo, completion: @escaping CreateCompletion) {
+    manager.createToDo(todo) { error, todo in
+      completion(error, todo)
+    }
   }
 }

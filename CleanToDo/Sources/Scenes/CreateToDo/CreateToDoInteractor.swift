@@ -12,30 +12,22 @@
 
 import UIKit
 
-protocol CreateToDoBusinessLogic
-{
-  func doSomething(request: CreateToDo.Something.Request)
+protocol CreateToDoBusinessLogic {
+  func createToDo(request: CreateToDo.CreateToDo.Request)
 }
 
-protocol CreateToDoDataStore
-{
-  //var name: String { get set }
+protocol CreateToDoDataStore {
+  
 }
 
-class CreateToDoInteractor: CreateToDoBusinessLogic, CreateToDoDataStore
-{
+class CreateToDoInteractor: CreateToDoBusinessLogic, CreateToDoDataStore {
   var presenter: CreateToDoPresentationLogic?
-  var worker: CreateToDoWorker?
-  //var name: String = ""
+  var worker: CreateToDoWorkerLogic?
   
-  // MARK: Do something
-  
-  func doSomething(request: CreateToDo.Something.Request)
-  {
-    worker = CreateToDoWorker()
-    worker?.doSomeWork()
-    
-    let response = CreateToDo.Something.Response()
-    presenter?.presentSomething(response: response)
+  func createToDo(request: CreateToDo.CreateToDo.Request) {
+    worker?.createToDo(request.todo) { error, todo in
+      let response = CreateToDo.CreateToDo.Response(error: error)
+      self.presenter?.createToDo(response: response)
+    }
   }
 }

@@ -12,19 +12,18 @@
 
 import UIKit
 
-enum CreateToDo
-{
-  enum Create {
+enum CreateToDo {
+  enum CreateToDo {
     struct Request {
       var todo: ToDo
     }
     
     struct Response {
-      var completion: CreateCompletion
+      var error: ToDosCoreDataManagerError?
     }
     
     struct ViewModel {
-      var todo: ToDo?
+      var error: ToDosCoreDataManagerError?
     }
   }
 }

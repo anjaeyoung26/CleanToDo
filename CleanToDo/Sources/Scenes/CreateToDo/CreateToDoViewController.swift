@@ -12,78 +12,78 @@
 
 import UIKit
 
-protocol CreateToDoDisplayLogic: AnyObject
-{
-  func displaySomething(viewModel: CreateToDo.Something.ViewModel)
+protocol CreateToDoDisplayLogic: AnyObject {
+  func createToDo(viewModel: CreateToDo.CreateToDo.ViewModel)
 }
 
-class CreateToDoViewController: UIViewController, CreateToDoDisplayLogic
-{
+class CreateToDoViewController: UIViewController {
+  lazy var createButton: UIButton = {
+    let button = UIButton()
+    button.addTarget(self, action: #selector(didTapCreateButton), for: .touchUpInside)
+    button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+  
   var interactor: CreateToDoBusinessLogic?
   var router: (NSObjectProtocol & CreateToDoRoutingLogic & CreateToDoDataPassing)?
-
-  // MARK: Object lifecycle
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  init() {
+    super.init(nibName: nil, bundle: nil)
     setup()
   }
   
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
+  required init(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented.")
   }
   
-  // MARK: Setup
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
   
-  private func setup()
-  {
-    let viewController = self
+  private func setup() {
     let interactor = CreateToDoInteractor()
     let presenter = CreateToDoPresenter()
     let router = CreateToDoRouter()
+    
+    let viewController = self
     viewController.interactor = interactor
     viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
+    
     router.viewController = viewController
     router.dataStore = interactor
+    
+    presenter.viewController = viewController
+    interactor.presenter = presenter
   }
   
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+  private func createToDo() {
+    
+  }
+}
+
+
+// MARK: - CreateToDoDisplayLogic
+
+extension CreateToDoViewController: CreateToDoDisplayLogic {
+  func createToDo(viewModel: CreateToDo.CreateToDo.ViewModel) {
+    if let error = viewModel.error {
+      AlertFactory.show(
+        title: "Create Error",
+        message: error.description,
+        viewController: self
+      )
+    } else {
+      router?.routeToList()
     }
   }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = CreateToDo.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CreateToDo.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
+}
+
+
+// MARK: - Selector
+
+extension CreateToDoViewController {
+  @objc private func didTapCreateButton() {
+    
   }
 }

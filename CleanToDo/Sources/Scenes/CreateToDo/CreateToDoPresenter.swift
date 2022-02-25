@@ -12,20 +12,15 @@
 
 import UIKit
 
-protocol CreateToDoPresentationLogic
-{
-  func presentSomething(response: CreateToDo.Something.Response)
+protocol CreateToDoPresentationLogic {
+  func createToDo(response: CreateToDo.CreateToDo.Response)
 }
 
-class CreateToDoPresenter: CreateToDoPresentationLogic
-{
+class CreateToDoPresenter: CreateToDoPresentationLogic {
   weak var viewController: CreateToDoDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: CreateToDo.Something.Response)
-  {
-    let viewModel = CreateToDo.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func createToDo(response: CreateToDo.CreateToDo.Response) {
+    let viewModel = CreateToDo.CreateToDo.ViewModel(error: response.error)
+    viewController?.createToDo(viewModel: viewModel)
   }
 }
