@@ -12,78 +12,145 @@
 
 import UIKit
 
-protocol DetailToDoDisplayLogic: AnyObject
-{
-  func displaySomething(viewModel: DetailToDo.Something.ViewModel)
+protocol DetailToDoDisplayLogic: AnyObject {
+  func displayToDo(viewModel: DetailToDo.GetToDo.ViewModel)
+  func deleteToDo(viewModel: DetailToDo.DeleteToDo.ViewModel)
+  func updateToDo(viewModel: DetailToDo.UpdateToDo.ViewModel)
 }
 
-class DetailToDoViewController: UIViewController, DetailToDoDisplayLogic
-{
-  var interactor: DetailToDoBusinessLogic?
-  var router: (NSObjectProtocol & DetailToDoRoutingLogic & DetailToDoDataPassing)?
-
-  // MARK: Object lifecycle
+class DetailToDoViewController: UIViewController {
+  lazy var deleteButton: UIButton = {
+    let button = UIButton()
+    button.addTarget(self, action: #selector(didTapDeleteButton), for: .touchUpInside)
+    button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
+  var titleLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
   
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
+  var contentLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
   
-  // MARK: Setup
+  var startDateLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
   
-  private func setup()
-  {
-    let viewController = self
-    let interactor = DetailToDoInteractor()
-    let presenter = DetailToDoPresenter()
-    let router = DetailToDoRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
+  var dueDateLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
   
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+  var todo: ToDo? {
+    didSet {
+      displayToDo()
     }
   }
   
-  // MARK: View lifecycle
+  var router: (NSObjectProtocol & DetailToDoRoutingLogic & DetailToDoDataPassing)?
+  var interactor: DetailToDoBusinessLogic?
   
-  override func viewDidLoad()
-  {
+  init() {
+    super.init(nibName: nil, bundle: nil)
+    setup()
+  }
+  
+  required init(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented.")
+  }
+  
+  override func viewDidLoad() {
     super.viewDidLoad()
-    doSomething()
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = DetailToDo.Something.Request()
-    interactor?.doSomething(request: request)
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    requestToDo()
+  }
+
+  private func setup() {
+    let interactor = DetailToDoInteractor()
+    let presenter = DetailToDoPresenter()
+    let router = DetailToDoRouter()
+    
+    let viewController = self
+    viewController.interactor = interactor
+    viewController.router = router
+    
+    router.viewController = viewController
+    router.dataStore = interactor
+    
+    presenter.viewController = viewController
+    interactor.presenter = presenter
   }
   
-  func displaySomething(viewModel: DetailToDo.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
+  private func requestToDo() {
+    let request = DetailToDo.GetToDo.Request()
+    interactor?.getToDo(request: request)
+  }
+  
+  private func deleteToDo() {
+    let request = DetailToDo.DeleteToDo.Request()
+    interactor?.deleteToDo(request: request)
+  }
+  
+  private func displayToDo() {
+    if let todo = todo {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .medium
+      
+      startDateLabel.text = dateFormatter.string(from: todo.startDate)
+      dueDateLabel.text = dateFormatter.string(from: todo.dueDate)
+      contentLabel.text = todo.content
+      titleLabel.text = todo.title
+    }
+  }
+}
+
+
+// MARK: - DetailToDoDisplayLogic
+
+extension DetailToDoViewController: DetailToDoDisplayLogic {
+  func displayToDo(viewModel: DetailToDo.GetToDo.ViewModel) {
+    todo = viewModel.todo
+  }
+  
+  func deleteToDo(viewModel: DetailToDo.DeleteToDo.ViewModel) {
+    if let error = viewModel.error {
+      AlertFactory.show(
+        title: "Delete Error",
+        message: error.description,
+        viewController: self
+      )
+    } else {
+      dismiss(animated: true)
+    }
+  }
+  
+  func updateToDo(viewModel: DetailToDo.UpdateToDo.ViewModel) {
+    if let error = viewModel.error {
+      AlertFactory.show(
+        title: "Update Error",
+        message: error.description,
+        viewController: self
+      )
+    } else {
+      todo = viewModel.todo
+    }
+  }
+}
+
+
+// MARK: - Selector
+
+extension DetailToDoViewController {
+  @objc private func didTapDeleteButton() {
+    deleteToDo()
   }
 }

@@ -14,30 +14,46 @@ import UIKit
 
 enum DetailToDo
 {
-  enum Delete {
+  enum GetToDo {
     struct Request {
-      var id: Int16
+      
     }
     
     struct Response {
-      var completion: ErrorCompletion
+      var todo: ToDo
     }
     
     struct ViewModel {
-      var isDelete: Bool
+      var todo: ToDo
     }
   }
   
-  enum Update {
+  enum DeleteToDo {
+    struct Request {
+      
+    }
+    
+    struct Response {
+      var error: ToDosCoreDataManagerError?
+    }
+    
+    struct ViewModel {
+      var error: ToDosCoreDataManagerError?
+    }
+  }
+  
+  enum UpdateToDo {
     struct Request {
       var todo: ToDo
     }
     
     struct Response {
-      var completion: UpdateCompletion
+      var error: ToDosCoreDataManagerError?
+      var todo: ToDo?
     }
     
     struct ViewModel {
+      var error: ToDosCoreDataManagerError?
       var todo: ToDo?
     }
   }

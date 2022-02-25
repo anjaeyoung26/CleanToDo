@@ -12,49 +12,19 @@
 
 import UIKit
 
-@objc protocol DetailToDoRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol DetailToDoRoutingLogic {
+  func routeToList()
 }
 
-protocol DetailToDoDataPassing
-{
+protocol DetailToDoDataPassing {
   var dataStore: DetailToDoDataStore? { get }
 }
 
-class DetailToDoRouter: NSObject, DetailToDoRoutingLogic, DetailToDoDataPassing
-{
+class DetailToDoRouter: NSObject, DetailToDoRoutingLogic, DetailToDoDataPassing {
   weak var viewController: DetailToDoViewController?
   var dataStore: DetailToDoDataStore?
   
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: DetailToDoViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: DetailToDoDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+  func routeToList() {
+    
+  }
 }

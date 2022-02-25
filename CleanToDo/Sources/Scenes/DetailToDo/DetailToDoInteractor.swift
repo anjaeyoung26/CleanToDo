@@ -12,30 +12,48 @@
 
 import UIKit
 
-protocol DetailToDoBusinessLogic
-{
-  func doSomething(request: DetailToDo.Something.Request)
+protocol DetailToDoBusinessLogic {
+  func getToDo(request: DetailToDo.GetToDo.Request)
+  func deleteToDo(request: DetailToDo.DeleteToDo.Request)
+  func updateToDo(request: DetailToDo.UpdateToDo.Request)
 }
 
-protocol DetailToDoDataStore
-{
-  //var name: String { get set }
+protocol DetailToDoDataStore {
+  var todo: ToDo? { get set }
 }
 
-class DetailToDoInteractor: DetailToDoBusinessLogic, DetailToDoDataStore
-{
+class DetailToDoInteractor: DetailToDoBusinessLogic, DetailToDoDataStore {
   var presenter: DetailToDoPresentationLogic?
-  var worker: DetailToDoWorker?
-  //var name: String = ""
+  var worker: DetailToDoWorkerLogic?
+  var todo: ToDo?
   
-  // MARK: Do something
-  
-  func doSomething(request: DetailToDo.Something.Request)
-  {
-    worker = DetailToDoWorker()
-    worker?.doSomeWork()
+  func getToDo(request: DetailToDo.GetToDo.Request) {
+    guard let todo = todo else {
+      print("Should receive ToDo from ListToDosInteractor.")
+      return
+    }
     
-    let response = DetailToDo.Something.Response()
-    presenter?.presentSomething(response: response)
+    let response = DetailToDo.GetToDo.Response(todo: todo)
+    presenter?.presentToDo(response: response)
+  }
+  
+  func deleteToDo(request: DetailToDo.DeleteToDo.Request) {
+    guard let todo = todo else {
+      print("Should receive ToDo from ListToDosInteractor.")
+      return
+    }
+    
+    worker?.deleteToDo(id: todo.id) { error in
+      let response = DetailToDo.DeleteToDo.Response(error: error)
+      self.presenter?.deleteToDo(response: response)
+    }
+  }
+  
+  func updateToDo(request: DetailToDo.UpdateToDo.Request) {
+    worker?.updateToDo(todo: request.todo) { error, todo in
+      let response = DetailToDo.UpdateToDo.Response(error: error, todo: todo)
+      self.presenter?.updateToDo(response: response)
+      self.todo = todo
+    }
   }
 }

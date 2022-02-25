@@ -12,9 +12,27 @@
 
 import UIKit
 
-class DetailToDoWorker
-{
-  func doSomeWork()
-  {
+protocol DetailToDoWorkerLogic {
+  func deleteToDo(id: Int16, completion: @escaping ErrorCompletion)
+  func updateToDo(todo: ToDo, completion: @escaping UpdateCompletion)
+}
+
+class DetailToDoWorker: DetailToDoWorkerLogic {
+  private var manager: ToDosCoreDataManager
+  
+  init() {
+    manager = ToDosCoreDataManager(type: .persistent)
+  }
+  
+  func deleteToDo(id: Int16, completion: @escaping ErrorCompletion) {
+    manager.deleteToDo(id: id) { error in
+      completion(error)
+    }
+  }
+  
+  func updateToDo(todo: ToDo, completion: @escaping UpdateCompletion) {
+    manager.updateToDo(todo) { error, todo in
+      completion(error, todo)
+    }
   }
 }
