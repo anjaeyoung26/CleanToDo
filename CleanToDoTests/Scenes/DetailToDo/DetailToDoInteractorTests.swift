@@ -62,13 +62,13 @@ class DetailToDoInteractorTests: XCTestCase {
     sut.worker = worker
     
     // When
-    let updatedToDo = ToDo.fixture(id: 1, title: "Update")
-    let request = DetailToDo.UpdateToDo.Request(todo: updatedToDo)
+    let fixture = ToDo.fixture(id: 1, title: "Update")
+    let request = DetailToDo.UpdateToDo.Request(todo: fixture)
     sut.updateToDo(request: request)
     
     // Then
     XCTAssertTrue(presenter.didUpdateToDoCalled)
     XCTAssertTrue(worker.didUpdateToDoCalled)
-    XCTAssertEqual(sut.todo?.title, "Update")
+    XCTAssertEqual(sut.todo, request.todo)
   }
 }
