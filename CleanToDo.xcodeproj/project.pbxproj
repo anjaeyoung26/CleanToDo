@@ -25,6 +25,7 @@
 		AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */; };
 		AE27443A27C6655A00CC9E0F /* DetailToDoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443927C6655A00CC9E0F /* DetailToDoPresenterTests.swift */; };
 		AE27443C27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27443B27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift */; };
+		AE27444527C85DEF00CC9E0F /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27444427C85DEF00CC9E0F /* AlertFactory.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		AE27443527C4B89700CC9E0F /* DetailToDoInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoInteractorTests.swift; sourceTree = "<group>"; };
 		AE27443927C6655A00CC9E0F /* DetailToDoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoPresenterTests.swift; sourceTree = "<group>"; };
 		AE27443B27C6656C00CC9E0F /* DetailToDoDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		AE27444427C85DEF00CC9E0F /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 			path = TestDoubles;
 			sourceTree = "<group>";
 		};
+		AE27444327C85DBF00CC9E0F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AE27444427C85DEF00CC9E0F /* AlertFactory.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AEDA786627B37A9D009B608D = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 				AEDA78A927B37D63009B608D /* Models */,
 				AEDA78AC27B37D71009B608D /* Scenes */,
 				AEDA78AA27B37D67009B608D /* Services */,
+				AE27444327C85DBF00CC9E0F /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -409,7 +420,7 @@
 				AEDA786B27B37A9D009B608D /* Sources */,
 				AEDA786C27B37A9D009B608D /* Frameworks */,
 				AEDA786D27B37A9D009B608D /* Resources */,
-				3D9042C604676235E6762D19 /* [CP] Embed Pods Frameworks */,
+				07F497CDA60EAB330EDE4BF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,7 +439,7 @@
 				AEDA788427B37A9E009B608D /* Sources */,
 				AEDA788527B37A9E009B608D /* Frameworks */,
 				AEDA788627B37A9E009B608D /* Resources */,
-				7AC3B721F8CF5C7F90935D43 /* [CP] Embed Pods Frameworks */,
+				67374F32C0631B519B978679 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,7 +459,7 @@
 				AEDA788E27B37A9E009B608D /* Sources */,
 				AEDA788F27B37A9E009B608D /* Frameworks */,
 				AEDA789027B37A9E009B608D /* Resources */,
-				ED2D5AC95FA17C8EB700C83C /* [CP] Embed Pods Frameworks */,
+				DBC28DDB4C3D1DBD89593F25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -530,6 +541,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07F497CDA60EAB330EDE4BF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		251BCA0447A1771B29DF2A5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,24 +580,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D9042C604676235E6762D19 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDo/Pods-CleanToDo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AC3B721F8CF5C7F90935D43 /* [CP] Embed Pods Frameworks */ = {
+		67374F32C0631B519B978679 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -584,6 +595,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDoTests/Pods-CleanToDoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBC28DDB4C3D1DBD89593F25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAFEE15B0D09EB041F762539 /* [CP] Check Pods Manifest.lock */ = {
@@ -630,23 +658,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED2D5AC95FA17C8EB700C83C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -667,6 +678,7 @@
 				AEDA78CE27B37FD9009B608D /* ListToDosPresenter.swift in Sources */,
 				AEDA78C227B37FC9009B608D /* DetailToDoPresenter.swift in Sources */,
 				AEDA78E727B38E65009B608D /* ToDosCoreDataManager.swift in Sources */,
+				AE27444527C85DEF00CC9E0F /* AlertFactory.swift in Sources */,
 				AEDA78B727B37F90009B608D /* CreateToDoWorker.swift in Sources */,
 				AEDA78E127B382BD009B608D /* ToDo.swift in Sources */,
 				AE27441527BF85F700CC9E0F /* ListToDosCell.swift in Sources */,
