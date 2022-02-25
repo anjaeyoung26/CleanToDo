@@ -32,6 +32,8 @@
 		AE27445327C8A5B500CC9E0F /* CreateToDoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27445227C8A5B500CC9E0F /* CreateToDoInteractorTests.swift */; };
 		AE27445527C8A5EB00CC9E0F /* CreateToDoWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27445427C8A5EB00CC9E0F /* CreateToDoWorkerSpy.swift */; };
 		AE27445727C8A5F900CC9E0F /* CreateToDoPresentationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27445627C8A5F900CC9E0F /* CreateToDoPresentationSpy.swift */; };
+		AE27445927C8A9C800CC9E0F /* CreateToDoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27445827C8A9C800CC9E0F /* CreateToDoPresenterTests.swift */; };
+		AE27445D27C8AA5A00CC9E0F /* CreateToDoDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27445C27C8AA5A00CC9E0F /* CreateToDoDisplayLogicSpy.swift */; };
 		AEDA787327B37A9D009B608D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787227B37A9D009B608D /* AppDelegate.swift */; };
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
@@ -110,6 +112,8 @@
 		AE27445227C8A5B500CC9E0F /* CreateToDoInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoInteractorTests.swift; sourceTree = "<group>"; };
 		AE27445427C8A5EB00CC9E0F /* CreateToDoWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoWorkerSpy.swift; sourceTree = "<group>"; };
 		AE27445627C8A5F900CC9E0F /* CreateToDoPresentationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoPresentationSpy.swift; sourceTree = "<group>"; };
+		AE27445827C8A9C800CC9E0F /* CreateToDoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoPresenterTests.swift; sourceTree = "<group>"; };
+		AE27445C27C8AA5A00CC9E0F /* CreateToDoDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		AEDA786F27B37A9D009B608D /* CleanToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDA787227B37A9D009B608D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDA787C27B37A9D009B608D /* CleanToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 			children = (
 				AE27445127C8A5A900CC9E0F /* TestDoubles */,
 				AE27445227C8A5B500CC9E0F /* CreateToDoInteractorTests.swift */,
+				AE27445827C8A9C800CC9E0F /* CreateToDoPresenterTests.swift */,
 			);
 			path = CreateToDo;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		AE27445127C8A5A900CC9E0F /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				AE27445C27C8AA5A00CC9E0F /* CreateToDoDisplayLogicSpy.swift */,
 				AE27445627C8A5F900CC9E0F /* CreateToDoPresentationSpy.swift */,
 				AE27445427C8A5EB00CC9E0F /* CreateToDoWorkerSpy.swift */,
 			);
@@ -732,11 +738,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE27445927C8A9C800CC9E0F /* CreateToDoPresenterTests.swift in Sources */,
 				AE27445527C8A5EB00CC9E0F /* CreateToDoWorkerSpy.swift in Sources */,
 				AE27443A27C6655A00CC9E0F /* DetailToDoPresenterTests.swift in Sources */,
 				AE27440427BDD3B000CC9E0F /* ListToDosInteractorTests.swift in Sources */,
 				AE27443627C4B89700CC9E0F /* DetailToDoInteractorTests.swift in Sources */,
 				AE27445727C8A5F900CC9E0F /* CreateToDoPresentationSpy.swift in Sources */,
+				AE27445D27C8AA5A00CC9E0F /* CreateToDoDisplayLogicSpy.swift in Sources */,
 				AE2743FC27BDC9E400CC9E0F /* ListToDosPresenterTests.swift in Sources */,
 				AE27444927C86F9E00CC9E0F /* DetailToDoBusinessLogicSpy.swift in Sources */,
 				AE27440027BDD2CA00CC9E0F /* ListToDosPresentationLogicSpy.swift in Sources */,
