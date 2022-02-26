@@ -37,6 +37,7 @@ playground.xcworkspace
 
 # CocoaPods
 Pods/
+Podfile.lock
 
 # Accio dependency management
 Dependencies/
@@ -47,6 +48,7 @@ iOSInjectionProject/
 
 # Xcode Patch ###
 *.xcodeproj/*
+*.xcworkspace
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
