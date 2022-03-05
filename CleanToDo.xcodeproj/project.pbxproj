@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E414226D9C1C7905D58094D /* Pods_CleanToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0A8B67F4A6D6D051293574 /* Pods_CleanToDoUITests.framework */; };
 		40D1EE8F9F052CB11A33DEDE /* Pods_CleanToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66FE43F9F70A3F40E8E4545 /* Pods_CleanToDoTests.framework */; };
 		8F197FD37C0F3303573E033D /* Pods_CleanToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7AE874B772AEC7CA90507F /* Pods_CleanToDo.framework */; };
 		AE2743F127B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2743F027B77F3E00CC9E0F /* ToDosCoreDataManagerTests.swift */; };
@@ -41,8 +40,6 @@
 		AEDA787D27B37A9D009B608D /* CleanToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEDA787B27B37A9D009B608D /* CleanToDo.xcdatamodeld */; };
 		AEDA787F27B37A9E009B608D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDA787E27B37A9E009B608D /* Assets.xcassets */; };
 		AEDA788227B37A9E009B608D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDA788027B37A9E009B608D /* LaunchScreen.storyboard */; };
-		AEDA789727B37A9E009B608D /* CleanToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA789627B37A9E009B608D /* CleanToDoUITests.swift */; };
-		AEDA789927B37A9E009B608D /* CleanToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA789827B37A9E009B608D /* CleanToDoUITestsLaunchTests.swift */; };
 		AEDA78B627B37F90009B608D /* CreateToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA78B027B37F90009B608D /* CreateToDoPresenter.swift */; };
 		AEDA78B727B37F90009B608D /* CreateToDoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA78B127B37F90009B608D /* CreateToDoWorker.swift */; };
 		AEDA78B827B37F90009B608D /* CreateToDoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA78B227B37F90009B608D /* CreateToDoRouter.swift */; };
@@ -69,13 +66,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		AEDA788927B37A9E009B608D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEDA786727B37A9D009B608D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEDA786E27B37A9D009B608D;
-			remoteInfo = CleanToDo;
-		};
-		AEDA789327B37A9E009B608D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEDA786727B37A9D009B608D /* Project object */;
 			proxyType = 1;
@@ -127,9 +117,6 @@
 		AEDA788127B37A9E009B608D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEDA788327B37A9E009B608D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDA788827B37A9E009B608D /* CleanToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEDA789227B37A9E009B608D /* CleanToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEDA789627B37A9E009B608D /* CleanToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanToDoUITests.swift; sourceTree = "<group>"; };
-		AEDA789827B37A9E009B608D /* CleanToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AEDA78B027B37F90009B608D /* CreateToDoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoPresenter.swift; sourceTree = "<group>"; };
 		AEDA78B127B37F90009B608D /* CreateToDoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoWorker.swift; sourceTree = "<group>"; };
 		AEDA78B227B37F90009B608D /* CreateToDoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoRouter.swift; sourceTree = "<group>"; };
@@ -169,14 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D1EE8F9F052CB11A33DEDE /* Pods_CleanToDoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEDA788F27B37A9E009B608D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E414226D9C1C7905D58094D /* Pods_CleanToDoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +285,6 @@
 			children = (
 				AEDA787127B37A9D009B608D /* CleanToDo */,
 				AEDA788B27B37A9E009B608D /* CleanToDoTests */,
-				AEDA789527B37A9E009B608D /* CleanToDoUITests */,
 				AEDA787027B37A9D009B608D /* Products */,
 				48B5FD27AE18BD3CFB53BFCB /* Pods */,
 				42DBD8F86E3CB0EB56416152 /* Frameworks */,
@@ -319,7 +297,6 @@
 			children = (
 				AEDA786F27B37A9D009B608D /* CleanToDo.app */,
 				AEDA788827B37A9E009B608D /* CleanToDoTests.xctest */,
-				AEDA789227B37A9E009B608D /* CleanToDoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,15 +318,6 @@
 				AE2743EF27B77F3E00CC9E0F /* Services */,
 			);
 			path = CleanToDoTests;
-			sourceTree = "<group>";
-		};
-		AEDA789527B37A9E009B608D /* CleanToDoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AEDA789627B37A9E009B608D /* CleanToDoUITests.swift */,
-				AEDA789827B37A9E009B608D /* CleanToDoUITestsLaunchTests.swift */,
-			);
-			path = CleanToDoUITests;
 			sourceTree = "<group>";
 		};
 		AEDA78A527B37AB0009B608D /* Resources */ = {
@@ -500,26 +468,6 @@
 			productReference = AEDA788827B37A9E009B608D /* CleanToDoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AEDA789127B37A9E009B608D /* CleanToDoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEDA78A227B37A9E009B608D /* Build configuration list for PBXNativeTarget "CleanToDoUITests" */;
-			buildPhases = (
-				EAFEE15B0D09EB041F762539 /* [CP] Check Pods Manifest.lock */,
-				AEDA788E27B37A9E009B608D /* Sources */,
-				AEDA788F27B37A9E009B608D /* Frameworks */,
-				AEDA789027B37A9E009B608D /* Resources */,
-				DBC28DDB4C3D1DBD89593F25 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEDA789427B37A9E009B608D /* PBXTargetDependency */,
-			);
-			name = CleanToDoUITests;
-			productName = CleanToDoUITests;
-			productReference = AEDA789227B37A9E009B608D /* CleanToDoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -534,10 +482,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					AEDA788727B37A9E009B608D = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = AEDA786E27B37A9D009B608D;
-					};
-					AEDA789127B37A9E009B608D = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = AEDA786E27B37A9D009B608D;
 					};
@@ -558,7 +502,6 @@
 			targets = (
 				AEDA786E27B37A9D009B608D /* CleanToDo */,
 				AEDA788727B37A9E009B608D /* CleanToDoTests */,
-				AEDA789127B37A9E009B608D /* CleanToDoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -574,13 +517,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AEDA788627B37A9E009B608D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEDA789027B37A9E009B608D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -644,45 +580,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDoTests/Pods-CleanToDoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBC28DDB4C3D1DBD89593F25 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanToDoUITests/Pods-CleanToDoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAFEE15B0D09EB041F762539 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CleanToDoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC781997BDF0DD257B67C4C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -775,15 +672,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEDA788E27B37A9E009B608D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEDA789927B37A9E009B608D /* CleanToDoUITestsLaunchTests.swift in Sources */,
-				AEDA789727B37A9E009B608D /* CleanToDoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -791,11 +679,6 @@
 			isa = PBXTargetDependency;
 			target = AEDA786E27B37A9D009B608D /* CleanToDo */;
 			targetProxy = AEDA788927B37A9E009B608D /* PBXContainerItemProxy */;
-		};
-		AEDA789427B37A9E009B608D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEDA786E27B37A9D009B608D /* CleanToDo */;
-			targetProxy = AEDA789327B37A9E009B608D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1027,46 +910,6 @@
 			};
 			name = Release;
 		};
-		AEDA78A327B37A9E009B608D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4928E6FB0B1B86DCD32682 /* Pods-CleanToDoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGKKY4727B;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ajy.cleantodo.CleanToDoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CleanToDo;
-			};
-			name = Debug;
-		};
-		AEDA78A427B37A9E009B608D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C2A5746EA848E20FA507130 /* Pods-CleanToDoUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGKKY4727B;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ajy.cleantodo.CleanToDoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CleanToDo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1093,15 +936,6 @@
 			buildConfigurations = (
 				AEDA78A027B37A9E009B608D /* Debug */,
 				AEDA78A127B37A9E009B608D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEDA78A227B37A9E009B608D /* Build configuration list for PBXNativeTarget "CleanToDoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEDA78A327B37A9E009B608D /* Debug */,
-				AEDA78A427B37A9E009B608D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
