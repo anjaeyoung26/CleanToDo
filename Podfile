@@ -14,7 +14,3 @@ end
 target 'CleanToDoTests' do
     pods
 end
-
-target 'CleanToDoUITests' do
-    pods
-end
