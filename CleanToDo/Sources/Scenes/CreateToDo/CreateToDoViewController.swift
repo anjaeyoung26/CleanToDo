@@ -45,6 +45,7 @@ class CreateToDoViewController: UIViewController {
     let interactor = CreateToDoInteractor()
     let presenter = CreateToDoPresenter()
     let router = CreateToDoRouter()
+    let worker = CreateToDoWorker()
     
     let viewController = self
     viewController.interactor = interactor
@@ -53,8 +54,10 @@ class CreateToDoViewController: UIViewController {
     router.viewController = viewController
     router.dataStore = interactor
     
-    presenter.viewController = viewController
     interactor.presenter = presenter
+    interactor.worker = worker
+    
+    presenter.viewController = viewController
   }
   
   private func createToDo() {

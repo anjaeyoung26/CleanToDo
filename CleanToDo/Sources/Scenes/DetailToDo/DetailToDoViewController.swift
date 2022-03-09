@@ -78,6 +78,7 @@ class DetailToDoViewController: UIViewController {
     let interactor = DetailToDoInteractor()
     let presenter = DetailToDoPresenter()
     let router = DetailToDoRouter()
+    let worker = DetailToDoWorker()
     
     let viewController = self
     viewController.interactor = interactor
@@ -86,8 +87,10 @@ class DetailToDoViewController: UIViewController {
     router.viewController = viewController
     router.dataStore = interactor
     
-    presenter.viewController = viewController
     interactor.presenter = presenter
+    interactor.worker = worker
+    
+    presenter.viewController = viewController
   }
   
   private func requestToDo() {

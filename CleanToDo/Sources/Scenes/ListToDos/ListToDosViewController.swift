@@ -60,6 +60,7 @@ class ListToDosViewController: UIViewController {
     let interactor = ListToDosInteractor()
     let presenter = ListToDosPresenter()
     let router = ListToDosRouter()
+    let worker = ListToDosWorker()
     
     let viewController = self
     viewController.interactor = interactor
@@ -68,8 +69,10 @@ class ListToDosViewController: UIViewController {
     router.viewController = viewController
     router.dataStore = interactor
     
-    presenter.viewController = viewController
     interactor.presenter = presenter
+    interactor.worker = worker
+    
+    presenter.viewController = viewController
   }
   
   private func requestToDos(date: Date) {
